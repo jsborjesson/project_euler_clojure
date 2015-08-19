@@ -9,4 +9,4 @@
 (defn solution []
   (reduce + (filter even? (take-while #(< % limit) (fib)))))
 
-(time (solution))
+; (time (solution))

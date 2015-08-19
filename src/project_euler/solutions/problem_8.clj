@@ -42,4 +42,4 @@
     0
     (partition n 1 digits)))
 
-(time (biggest-consecutive-digit-product 13 thousand-digits))
+; (time (biggest-consecutive-digit-product 13 thousand-digits))

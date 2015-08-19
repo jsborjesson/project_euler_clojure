@@ -17,4 +17,4 @@
     0
     (cartesian-product (range 100 1000) (range 100 1000))))
 
-(time (solution))
+; (time (solution))

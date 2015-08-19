@@ -89,4 +89,4 @@
           col (range size)]
       [row col])))
 
-(time (solution))
+; (time (solution))

@@ -5,4 +5,4 @@
 (def sum-of-squares (reduce + (map square (range 1 (inc limit)))))
 (def square-of-sum  (square (reduce + (range 1 (inc limit)))))
 
-(time (- square-of-sum sum-of-squares) )
+; (time (- square-of-sum sum-of-squares) )

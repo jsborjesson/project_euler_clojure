@@ -45,4 +45,4 @@
       0
       (primes limit))))
 
-(time (biggest-prime-factor number))
+; (time (biggest-prime-factor number))

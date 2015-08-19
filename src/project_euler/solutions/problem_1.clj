@@ -13,4 +13,4 @@
 (defn solution []
   (reduce + (filter condition (range limit))))
 
-(time (solution))
+; (time (solution))

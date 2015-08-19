@@ -17,4 +17,4 @@
         n
         (recur (+ n step))))))
 
-(time (smallest-divident-by-all 20))
+; (time (smallest-divident-by-all 20))

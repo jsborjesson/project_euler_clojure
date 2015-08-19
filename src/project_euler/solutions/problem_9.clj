@@ -19,4 +19,4 @@
                   (= n (+ a b c)))]
       [a b c])))
 
-(time (reduce * (first (pythagorean-triplets limit))))
+; (time (reduce * (first (pythagorean-triplets limit))))
