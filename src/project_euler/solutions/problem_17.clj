@@ -1,4 +1,5 @@
-(ns project-euler.solutions.problem-17)
+(ns project-euler.solutions.problem-17
+  (:require [project-euler.lib.misc :refer [divisible-by?]]))
 
 (def words
   {0 "zero"
@@ -31,8 +32,6 @@
    90 "ninety"
    100 "hundred"
    1000 "thousand"})
-
-(def divisible-by? (comp zero? mod))
 
 (defn text->int
   "Turns strings or chars into integers"

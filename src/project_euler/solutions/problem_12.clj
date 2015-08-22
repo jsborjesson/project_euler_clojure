@@ -1,4 +1,5 @@
-(ns project-euler.solutions.problem-12)
+(ns project-euler.solutions.problem-12
+  (:require [project-euler.lib.misc :refer [divisible-by?]]))
 
 (defn tri
   "Constructs a lazy-seq of triangle numbers"
@@ -6,8 +7,6 @@
   ; n is the natural number (1 2 3 ...)
   ; t is the triangle number (1 3 6 ...)
   ([n t] (cons t (lazy-seq (tri (inc n) (+ t (inc n)))))))
-
-(def divisible-by? (comp zero? mod))
 
 ; Every factor below the square root of n has exactly one corresponding factor above it,
 ; therefore the number of factors = number of factors below sqrt(n)*2

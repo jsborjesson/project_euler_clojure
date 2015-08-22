@@ -1,6 +1,5 @@
-(ns project-euler.solutions.problem-5)
-
-(def divisible-by? (comp zero? mod))
+(ns project-euler.solutions.problem-5
+  (:require [project-euler.lib.misc :refer [divisible-by?]]))
 
 (defn divisible-by-all?
   "Whether n is evenly divisible by every member of denoms"
@@ -17,4 +16,7 @@
         n
         (recur (+ n step))))))
 
-; (time (smallest-divident-by-all 20))
+(defn solution []
+  (smallest-divident-by-all 20))
+
+; (time (solution))

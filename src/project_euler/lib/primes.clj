@@ -1,7 +1,5 @@
 (ns project-euler.lib.primes)
 
-;; Copied from the Problem 3 solution
-
 (defn bitmap
   "Generates a vector of booleans all defaulting to true"
   [length]
@@ -32,4 +30,3 @@
   [limit]
   (let [indexed-bitmap (partition 2 (interleave (range limit) (prime-bitmap limit)))]
     (map first (filter second indexed-bitmap))))
-
