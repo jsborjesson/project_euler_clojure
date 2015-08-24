@@ -17,31 +17,23 @@
   [n]
   (reduce + (butlast (factors n))))
 
-; Making the memo function a simple pre-computed vector lookup almost doubled
-; the performance over memoize, which already significantly improved it.
-; (def sum-factors-memo (memoize sum-factors))
-(def sums (mapv sum-factors (range limit)))
-(defn sum-factors-memo [n] (sums n))
-
 (defn amicable?
   "Whether a and b are an amicable pair"
   [a b]
   (and
     (not= a b)
-    (= (sum-factors-memo a) b)
-    (= (sum-factors-memo b) a)))
+    (= (sum-factors a) b)
+    (= (sum-factors b) a)))
 
 (defn solution
-  "Count sum of amicable pairs up to limit"
   [limit]
   (reduce
-    +
-    (flatten
-      (filter
-        (partial apply amicable?)
-        (for [a (range limit)
-              b (range limit)
-              :when (< a b)]
-          [a b])))))
+    (fn [sum candidate] ; Add the candidate and its amicable pair, and if it is the lower one in the pair (to prevent counting twice)
+      (let [factor-sum (sum-factors candidate)]
+        (if (and (< factor-sum candidate) (amicable? candidate factor-sum))
+          (+ sum candidate factor-sum)
+          sum)))
+    0
+    (range limit)))
 
 ; (time (solution limit))
