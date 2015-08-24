@@ -1,9 +1,5 @@
-(ns project-euler.lib.primes)
-
-(defn bitmap
-  "Generates a vector of booleans all defaulting to true"
-  [length]
-  (vec (take length (repeat true))))
+(ns project-euler.lib.primes
+  (:require [project-euler.lib.misc :refer [bitmap]]))
 
 
 (defn cross-out-multiples

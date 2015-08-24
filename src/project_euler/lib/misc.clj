@@ -19,3 +19,8 @@
   "The sum of all factors of n, counting 1, not counting n"
   [n]
   (reduce + (butlast (factors n))))
+
+(defn bitmap
+  "Generates a vector of booleans"
+  ([length] (bitmap length true))
+  ([length default] (vec (take length (repeat default)))))
