@@ -24,5 +24,5 @@
 (defn primes
   "Generates a list of primes up to (not including) limit"
   [limit]
-  (let [indexed-bitmap (partition 2 (interleave (range limit) (prime-bitmap limit)))]
+  (let [indexed-bitmap (map-indexed vector (prime-bitmap limit))]
     (map first (filter second indexed-bitmap))))
